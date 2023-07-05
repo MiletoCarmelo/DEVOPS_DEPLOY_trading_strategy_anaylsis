@@ -1,0 +1,48 @@
+kyc-client-onboarding:
+  module: kyc-client-onboarding
+
+  replicas: 2
+
+  containers:
+    image: xxxxxx
+    name: xxxxxx
+    tags: xxxxxx
+    ports:
+      containerPort: 8080
+    sqlite:
+      enable: true
+      mountPath: /app/data
+    redis:
+      enable: true
+      tags: latest
+      env:
+      resources:
+        requests:
+          memory: "50Mi"
+          cpu: "200m"
+        limits:
+          memory: "50Mi"
+          cpu: "200m"
+
+  service:
+    port: 8080
+
+  ingress:
+    host: cloud-uat.flowbank.com
+    enable: true
+    metadata:
+      annotations:
+        haproxy.org/path-rewrite: /xxxxx/(.*) /\1
+    spec:
+      path: /xxxxx
+      pathType: Prefix
+
+  secrets:
+    mountPath: /app
+    type: stringData #stringData, sealedSecret or data
+    data: |-
+      username: toto
+      password: password
+  technicalSecret:
+    type: data #stringData, sealedSecret or data
+    githubSecret: eyJhdXRocyI6eyJnaGNyLmlvIjp7InVzZXJuYW1lIjoiRGViem91IiwicGFzc3dvcmQiOiJnaHBfQ2sxWEc2aDhBd0NXWjVXSjlKbDNDZlpYZmkzM3NtMnFZQVJOIiwiYXV0aCI6IlJHVmllbTkxT21kb2NGOURhekZZUnpab09FRjNRMWRhTlZkS09VcHNNME5tV2xobWFUTXpjMjB5Y1ZsQlVrND0ifX19
