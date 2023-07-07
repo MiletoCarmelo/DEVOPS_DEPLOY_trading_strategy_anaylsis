@@ -4,25 +4,15 @@ kyc-client-onboarding:
   replicas: 2
 
   containers:
-    image: xxxxxx
-    name: xxxxxx
-    tags: xxxxxx
+    image: ghcr.io/flowbanksa/dev_kyc_client_onboarding
+    name: kyc-client-onboarding
+    tags: v0.1.0
     ports:
       containerPort: 8080
     sqlite:
-      enable: true
-      mountPath: /app/data
+      enable: false
     redis:
-      enable: true
-      tags: latest
-      env:
-      resources:
-        requests:
-          memory: "50Mi"
-          cpu: "200m"
-        limits:
-          memory: "50Mi"
-          cpu: "200m"
+      enable: false
 
   service:
     port: 8080
@@ -32,17 +22,17 @@ kyc-client-onboarding:
     enable: true
     metadata:
       annotations:
-        haproxy.org/path-rewrite: /xxxxx/(.*) /\1
+        haproxy.org/path-rewrite: /kyc-client-onboarding/(.*) /\1
     spec:
-      path: /xxxxx
+      path: /kyc-client-onboarding
       pathType: Prefix
 
   secrets:
     mountPath: /app
-    type: stringData #stringData, sealedSecret or data
-    data: |-
-      username: toto
-      password: password
+    type: sealedSecret
+    data: xxxxx
+
+
   technicalSecret:
     type: data #stringData, sealedSecret or data
     githubSecret: eyJhdXRocyI6eyJnaGNyLmlvIjp7InVzZXJuYW1lIjoiRGViem91IiwicGFzc3dvcmQiOiJnaHBfQ2sxWEc2aDhBd0NXWjVXSjlKbDNDZlpYZmkzM3NtMnFZQVJOIiwiYXV0aCI6IlJHVmllbTkxT21kb2NGOURhekZZUnpab09FRjNRMWRhTlZkS09VcHNNME5tV2xobWFUTXpjMjB5Y1ZsQlVrND0ifX19
