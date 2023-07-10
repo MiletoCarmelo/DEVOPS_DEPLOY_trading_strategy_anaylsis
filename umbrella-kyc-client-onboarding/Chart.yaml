@@ -25,6 +25,6 @@ appVersion: "1.16.0"
 
 dependencies:
   - name: generic-golang-backend
-    version: 0.3.2
+    version: 0.3.3
     repository: https://raw.githubusercontent.com/FlowbankSA/DEVOPS_HELM_generic_golang_backend/github-pages
     alias: kyc-client-onboarding
