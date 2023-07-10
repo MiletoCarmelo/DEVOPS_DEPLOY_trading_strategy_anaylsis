@@ -1,0 +1,38 @@
+kyc-client-onboarding:
+  module: kyc-client-onboarding
+
+  replicas: 2
+
+  containers:
+    image: ghcr.io/flowbanksa/dev_kyc_client_onboarding
+    name: kyc-client-onboarding
+    tags: v0.1.0
+    ports:
+      containerPort: 8080
+    sqlite:
+      enable: false
+    redis:
+      enable: false
+
+  service:
+    port: 8080
+
+  ingress:
+    host: cloud-uat.flowbank.com
+    enable: true
+    metadata:
+      annotations:
+        haproxy.org/path-rewrite: /kyc-client-onboarding/(.*) /\1
+    spec:
+      path: /kyc-client-onboarding
+      pathType: Prefix
+
+  secrets:
+    mountPath: /app
+    type: sealedSecret
+    data: AgDJKY0CDqaPQMCtECVEcdMrzwlpJq07lxLHQcNh7ULGxPoLUCdB5BZ0+Mf76U5yGRQPBJiH63mMvIn4k8IQ9L6DSuuPMJRCk7prWI3Svt1uIEc2VTXauRlVqdcwRR8zMHf0gd/fwhlaz1LhXw0sGQ55po/Yn4EWxh4Zft9NZ4jxrimMKVezseQnQ2zQnI1l62yKW+z9ba+Rr9wprRWXLRULzL+ZQJcCOS6W/Htgao+iRovMrtT1ACOG5mIIRegbJPJq15PQ9R2E47yaVC6iz5FylTAZk593txQpekAycG1iLpbT0vvF7/FOu2Z8oMMOITDVwzm8Z5/+4s5uNfXP65P/6kNAjV4EwQ8K3d2N8M+O4ZoMgDUOuFTGC+0g2NiS3A6p+CUUnIgA8EFEa6yTelpFvGqGOx9TxTBnK3QZK3v8PS1LJTrU/XyeT3RZemIB8wqSXD9K99ZEwAIjEyKw70fDnB5HQhxcDp/g7NB1G8R/Mzzy/9GyXuA2Z2xmGGzC7o5XAQ89uyIlOsqFgVK8iShHacUQPAYkz4cM3KXjgxru9JLwNjVIr+STP3NduaDJaHE07ghx0+jFlsCLqofYukHw4JaV3dcBW/75vay1fAW0mFjj58g1RZahBKFSO3BY41vNzc0ewLAdxqF7m0PxbtjtDl9T2SPV2GkYw9otUPuwOcqnPhTOpo71GoH6VICzMLahCPB3lsmK+yU0dU37hZOaRZDfOpZyHMA3l+p0RNu+GCmCYOcPC+Wfecawz0rVEKw8y6+2xG2Czp2lau9VVWaBx+RtCwyQNV/If/idEb6PqtvlsvgdCRdE2xGM/rBUH9s1c7BIz2Q8Ue6jaXmGioi5R4wh9CwOsOVQezJmyviQBEUhE3H0IC+wWKfCpPXDXkKsSG3KIXSBmc3UBHt+GGr+GBCo0KxP8EUnowOxKY+w0LuO9GeLArGc+4I1cMt+k344i+KTdZdfupQfrtjc1h/gZuwhFShkHCEP7ROGKljZYbEDe9fwYrpPi8R7w2gjDzBBPvQKb86ZSiagTEPxi5MAHCWxD5yKv7N5agJek757S666jC/ZkD0/5dhah9UDqkqkOCc/yb23bpcfSlv7Z+xKDg3AeyZjU/hpkWmxtCvwGxZo4Ke4lJjBJnVzYdsmE9G4iM03gO7BnjNt9uFjvoLJ2rOXUmMQ0c27Muao7XkxCvgc+W/JGT1m6xq6QSkijDV5L11M/JPdECfrLxMPuzLAzWTo07ToEYHulFe7b+AXcKOVTyBTDHpxFpPD6dHzs+TUSzw2ieXCb/Ti6wOyEeiXo84aT8A9CpJTemat2+yCgkzOfPs7Ys9V
+
+
+  technicalSecret:
+    type: data #stringData, sealedSecret or data
+    githubSecret: eyJhdXRocyI6eyJnaGNyLmlvIjp7InVzZXJuYW1lIjoiRGViem91IiwicGFzc3dvcmQiOiJnaHBfQ2sxWEc2aDhBd0NXWjVXSjlKbDNDZlpYZmkzM3NtMnFZQVJOIiwiYXV0aCI6IlJHVmllbTkxT21kb2NGOURhekZZUnpab09FRjNRMWRhTlZkS09VcHNNME5tV2xobWFUTXpjMjB5Y1ZsQlVrND0ifX19
