@@ -1,6 +1,0 @@
-dependencies:
-- name: generic-golang-backend
-  repository: https://raw.githubusercontent.com/FlowbankSA/DEVOPS_HELM_generic_golang_backend/github-pages
-  version: 0.3.2
-digest: sha256:d2809272742b0944c190254fdaf8f70cf14ee3e9d0e4e6765948c38b2d2681fe
-generated: "2023-07-07T16:21:21.293001+02:00"
