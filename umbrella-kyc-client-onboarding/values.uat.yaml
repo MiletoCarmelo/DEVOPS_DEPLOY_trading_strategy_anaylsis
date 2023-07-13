@@ -8,14 +8,14 @@ kyc-client-onboarding:
     name: kyc-client-onboarding
     tags: v0.1.2
     ports:
-      containerPort: 8080
+      containerPort: 8000
     sqlite:
       enable: false
     redis:
       enable: false
 
   service:
-    port: 8080
+    port: 8000
 
   ingress:
     host: cloud-uat.flowbank.com
