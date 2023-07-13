@@ -18,7 +18,7 @@ kyc-client-onboarding:
     port: 8000
 
   ingress:
-    host: nnr82tqzgi.execute-api.eu-central-1.amazonaws.com
+    host: cloud-uat.flowbank.com
     enable: true
     metadata:
       annotations:
