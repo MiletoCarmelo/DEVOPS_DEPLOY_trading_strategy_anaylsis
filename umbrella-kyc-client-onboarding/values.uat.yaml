@@ -48,3 +48,4 @@ kyc-client-onboarding:
   technicalSecret:
     type: data #stringData, sealedSecret or data
     githubSecret: eyJhdXRocyI6eyJnaGNyLmlvIjp7InVzZXJuYW1lIjoiRGViem91IiwicGFzc3dvcmQiOiJnaHBfQ2sxWEc2aDhBd0NXWjVXSjlKbDNDZlpYZmkzM3NtMnFZQVJOIiwiYXV0aCI6IlJHVmllbTkxT21kb2NGOURhekZZUnpab09FRjNRMWRhTlZkS09VcHNNME5tV2xobWFUTXpjMjB5Y1ZsQlVrND0ifX19
+ 
