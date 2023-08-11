@@ -43,7 +43,7 @@ kyc-client-onboarding:
       OKTA_DOMAIN: "flowbank-poc.eu.auth0.com"
       API_PORT: "8000"
       PEGA_USER: "25253149798704441241"
-      PEGA_URL: "https://flbkpr-flow-dev1.pega.net/prweb/api"
+      PEGA_URL: "https://flbkpr-flow-dev1.pega.net/prweb/api/FBCLMUTA"
       PEGA_TOKEN_URL: "https://flbkpr-flow-dev1.pega.net/prweb/PRRestService/oauth2/v1/token"
       OKTA_CLIENT_ID: 6MQqLbbhXWqdztSMEe4018eHT173vNS7
       INTRUM_DOMAIN: https://sandbox-autoid.ubiid.ch
