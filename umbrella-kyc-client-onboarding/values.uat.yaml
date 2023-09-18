@@ -6,7 +6,7 @@ kyc-client-onboarding:
   containers:
     image: ghcr.io/flowbanksa/dev_kyc_client_onboarding
     name: kyc-client-onboarding
-    tags: v0.1.23
+    tags: v0.1.24
     ports:
       containerPort: 8000
     sqlite:
@@ -48,6 +48,8 @@ kyc-client-onboarding:
       OKTA_CLIENT_ID: M5scq7mP0RzkFIZtEv2Apsy8LxuMbZVB
       INTRUM_DOMAIN: https://sandbox-autoid.ubiid.ch
       INTRUM_TENANT_ID: c9ca6d4b-344f-4f3a-8ef2-fd3610abc789
+      SIGNING_WEBHOOK_WORKERS: 5
+      IDENTIFICATION_WEBHOOK_WORKERS: 5
 
   technicalSecret:
     type: data #stringData, sealedSecret or data
