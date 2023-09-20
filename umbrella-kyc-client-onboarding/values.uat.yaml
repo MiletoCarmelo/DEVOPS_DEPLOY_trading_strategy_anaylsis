@@ -6,7 +6,7 @@ kyc-client-onboarding:
   containers:
     image: ghcr.io/flowbanksa/dev_kyc_client_onboarding
     name: kyc-client-onboarding
-    tags: v0.1.32
+    tags: v0.1.33
     ports:
       containerPort: 8000
     sqlite:
@@ -55,6 +55,7 @@ kyc-client-onboarding:
       AWS_S3_BUCKET: 'flowbank-client-legal-documents'
       AWS_S3_FOLDER_PREFIX: 'flowbank_client_legal_documents_'
       AWS_S3_FORCE_ENGLISH: 'true'
+      FORCE_HAPPY_PATH: 'true'
 
   technicalSecret:
     type: data #stringData, sealedSecret or data
