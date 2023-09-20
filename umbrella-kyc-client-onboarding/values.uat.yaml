@@ -51,7 +51,7 @@ kyc-client-onboarding:
       SIGNING_WEBHOOK_WORKERS: '5'
       IDENTIFICATION_WEBHOOK_WORKERS: '5'
       USE_DOCUMENTS_FROM_S3: 'false'
-      AWS_ACCESS_KEY_ID: 'AKIA6CMMJVPW2XUNYFPL'
+      #AWS_ACCESS_KEY_ID: 'AKIA6CMMJVPW2XUNYFPL'
       AWS_S3_REGION: 'eu-central-2'
       AWS_S3_BUCKET: 'flowbank-client-legal-documents'
       AWS_S3_FOLDER_PREFIX: 'flowbank_client_legal_documents_'
