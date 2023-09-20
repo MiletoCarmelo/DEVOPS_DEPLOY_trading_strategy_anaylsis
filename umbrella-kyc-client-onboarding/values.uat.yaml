@@ -63,5 +63,5 @@ kyc-client-onboarding:
   serviceAccount:
     enabled: true
     annotations:
-      eks.amazonaws.com/role-arn: "arn:aws:iam::967198747629:role/apps/kyc_kyc-sa"
+      eks.amazonaws.com/role-arn: "arn:aws:iam::967198747629:role/apps/kyc_kyc-client-onboarding-sa"
       eks.amazonaws.com/sts-regional-endpoints: "true"
