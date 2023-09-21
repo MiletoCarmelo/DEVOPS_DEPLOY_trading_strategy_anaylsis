@@ -6,7 +6,7 @@ kyc-client-onboarding:
   containers:
     image: ghcr.io/flowbanksa/dev_kyc_client_onboarding
     name: kyc-client-onboarding
-    tags: v0.1.34
+    tags: v0.1.35
     ports:
       containerPort: 8000
     sqlite:
