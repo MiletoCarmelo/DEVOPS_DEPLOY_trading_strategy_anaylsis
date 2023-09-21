@@ -49,12 +49,12 @@ kyc-client-onboarding:
       INTRUM_TENANT_ID: c9ca6d4b-344f-4f3a-8ef2-fd3610abc789
       SIGNING_WEBHOOK_WORKERS: '5'
       IDENTIFICATION_WEBHOOK_WORKERS: '5'
-      USE_DOCUMENTS_FROM_S3: 'false'
+      USE_DOCUMENTS_FROM_S3: 'true'
       #AWS_ACCESS_KEY_ID: 'AKIA6CMMJVPW2XUNYFPL'
       AWS_S3_REGION: 'eu-central-2'
       AWS_S3_BUCKET: 'flowbank-client-legal-documents'
       AWS_S3_FOLDER_PREFIX: 'flowbank_client_legal_documents_'
-      AWS_S3_FORCE_ENGLISH: 'true'
+      AWS_S3_FORCE_ENGLISH: 'false'
       FORCE_HAPPY_PATH: 'true'
 
   technicalSecret:
