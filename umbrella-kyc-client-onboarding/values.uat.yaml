@@ -7,6 +7,12 @@ kyc-client-onboarding:
     image: ghcr.io/flowbanksa/dev_kyc_client_onboarding
     name: kyc-client-onboarding
     tags: v0.1.36
+    serviceAccount:
+      enabled: true
+      name: kyc-client-onboarding-sa
+      annotations:
+        eks.amazonaws.com/role-arn: "arn:aws:iam::967198747629:role/apps/kyc_kyc-client-onboarding-sa"
+        eks.amazonaws.com/sts-regional-endpoints: "true"
     ports:
       containerPort: 8000
     sqlite:
@@ -63,8 +69,3 @@ kyc-client-onboarding:
     type: data #stringData, sealedSecret or data
     githubSecret: eyJhdXRocyI6eyJnaGNyLmlvIjp7InVzZXJuYW1lIjoiRGViem91IiwicGFzc3dvcmQiOiJnaHBfQ2sxWEc2aDhBd0NXWjVXSjlKbDNDZlpYZmkzM3NtMnFZQVJOIiwiYXV0aCI6IlJHVmllbTkxT21kb2NGOURhekZZUnpab09FRjNRMWRhTlZkS09VcHNNME5tV2xobWFUTXpjMjB5Y1ZsQlVrND0ifX19
 
-  serviceAccount:
-    enabled: true
-    annotations:
-      eks.amazonaws.com/role-arn: "arn:aws:iam::967198747629:role/apps/kyc_kyc-client-onboarding-sa"
-      eks.amazonaws.com/sts-regional-endpoints: "true"
