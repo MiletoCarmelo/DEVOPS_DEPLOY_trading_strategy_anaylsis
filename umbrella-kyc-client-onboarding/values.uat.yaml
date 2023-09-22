@@ -16,6 +16,13 @@ kyc-client-onboarding:
         eks.amazonaws.com/sts-regional-endpoints: "true"
     ports:
       containerPort: 8000
+    resources:
+      requests:
+        memory: "250Mi"
+        cpu: "500m"
+      limits:
+        memory: "250Mi"
+        cpu: "500m"
     sqlite:
       enable: false
     redis:
