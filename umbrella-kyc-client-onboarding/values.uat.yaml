@@ -6,7 +6,7 @@ kyc-client-onboarding:
   containers:
     image: ghcr.io/flowbanksa/dev_kyc_client_onboarding
     name: kyc-client-onboarding
-    tags: v0.1.46
+    tags: v0.1.47
     serviceAccount:
       enabled: true
       create: true
@@ -74,6 +74,9 @@ kyc-client-onboarding:
       #USE_AWS_ENV_VAR: 'true'
       TAX_DOC_NAME: 'Tax Self-Certification.pdf'
       SIGNING_REDIRECT_SUCCESS_URL: 'https://my-pega-uat.flowbank.com/onboarding'
+      SIGNING_REDIRECT_FAILED_URL: 'https://my-pega-uat.flowbank.com/onboarding'
+      SIGNING_REDIRECT_REDIRECT_URL: 'https://my-pega-uat.flowbank.com/onboarding'
+      SIGNING_REDIRECT_TIMEOUT_URL: 'https://my-pega-uat.flowbank.com/onboarding'
 
   technicalSecret:
     type: data #stringData, sealedSecret or data
