@@ -70,7 +70,7 @@ kyc-client-onboarding:
       AWS_S3_BUCKET: 'flowbank-client-legal-documents'
       AWS_S3_FOLDER_PREFIX: 'flowbank_client_legal_documents_'
       AWS_S3_FORCE_ENGLISH: 'false'
-      FORCE_HAPPY_PATH: 'false'
+      FORCE_HAPPY_PATH: 'true'
       #USE_AWS_ENV_VAR: 'true'
       TAX_DOC_NAME: 'Tax Self-Certification.pdf'
       SIGNING_REDIRECT_SUCCESS_URL: 'https://my-pega-uat.flowbank.com/onboarding'
