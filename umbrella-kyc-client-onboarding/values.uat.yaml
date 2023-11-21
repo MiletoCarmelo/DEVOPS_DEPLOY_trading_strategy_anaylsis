@@ -67,13 +67,14 @@ kyc-client-onboarding:
       AWS_S3_REGION: 'eu-central-2'
       AWS_S3_BUCKET: 'flowbank-client-legal-documents'
       AWS_S3_FOLDER_PREFIX: 'flowbank_client_legal_documents_'
-      AWS_S3_FORCE_ENGLISH: 'false'
       FORCE_HAPPY_PATH: 'false'
       TAX_DOC_NAME: 'Tax Self-Certification.pdf'
       SIGNING_REDIRECT_SUCCESS_URL: 'https://my-pega-uat.flowbank.com/onboarding'
       SIGNING_REDIRECT_FAILED_URL: 'https://my-pega-uat.flowbank.com/onboarding'
       SIGNING_REDIRECT_REDIRECT_URL: 'https://my-pega-uat.flowbank.com/onboarding'
       SIGNING_REDIRECT_TIMEOUT_URL: 'https://my-pega-uat.flowbank.com/onboarding'
+      LEGAL_DOCUMENT_LANGUAGES: 'fr,de,en,it'
+      TAX_DOC_TRANSLATIONS: '{"en":"Tax Self-Certification.pdf"}'
 
   technicalSecret:
     type: data #stringData, sealedSecret or data
