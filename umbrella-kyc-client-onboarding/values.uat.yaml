@@ -75,7 +75,7 @@ kyc-client-onboarding:
       SIGNING_REDIRECT_TIMEOUT_URL: 'https://my-pega-uat.flowbank.com/onboarding'
       LEGAL_DOCUMENT_LANGUAGES: 'fr,de,en,it'
       TAX_DOC_TRANSLATIONS: '{"en":"Tax Self-Certification.pdf"}'
-      SIGNATURE_PLACEMENT: '{"page":1,"y":50,"x":500,"width":700,"height":100,"fontName":"Arial","fontSize":10,"textVisible":true,"image":"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="}'
+      SIGNATURE_PLACEMENT: '{"page":0,"y":50,"x":500,"width":700,"height":100,"fontName":"Arial","fontSize":10,"textVisible":true,"image":"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="}'
 
   technicalSecret:
     type: data #stringData, sealedSecret or data
