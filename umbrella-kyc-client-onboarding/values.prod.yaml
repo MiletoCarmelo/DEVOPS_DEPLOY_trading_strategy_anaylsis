@@ -33,6 +33,12 @@ kyc-client-onboarding:
     data: |-
       username: toto
       password: password
+
+  configmap:
+    enabled: true
+    data:
+      INTRUM_TENANT_ID: 6202c83f-5533-4b2e-8779-ccb0a08ef106
+
   technicalSecret:
     type: data #stringData, sealedSecret or data
     githubSecret: eyJhdXRocyI6eyJnaGNyLmlvIjp7InVzZXJuYW1lIjoiRGViem91IiwicGFzc3dvcmQiOiJnaHBfQ2sxWEc2aDhBd0NXWjVXSjlKbDNDZlpYZmkzM3NtMnFZQVJOIiwiYXV0aCI6IlJHVmllbTkxT21kb2NGOURhekZZUnpab09FRjNRMWRhTlZkS09VcHNNME5tV2xobWFUTXpjMjB5Y1ZsQlVrND0ifX19
