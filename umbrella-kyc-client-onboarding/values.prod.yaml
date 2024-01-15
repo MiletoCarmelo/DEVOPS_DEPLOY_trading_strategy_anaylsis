@@ -26,18 +26,26 @@ kyc-client-onboarding:
     spec:
       path: /kyc-client-onboarding
       pathType: Prefix
-
-  secrets:
-    mountPath: /app
-    type: stringData #stringData, sealedSecret or data
-    data: |-
-      username: toto
-      password: password
+secrets:
+    type: sealedSecret #stringData, sealedSecret or data
+    data: 
+      INTRUM_JWT: AgAPYNTqao44RUaKFp3aaII11oujVr1UfNE4W+qPm7d8it5MQLKz5fxBk4m5Kql0jhJ/tbpjcN1iejdegvrEB/6NIuqJylJeVgsQBZGOYt1yKYhQuFQhJCgo0fH29GWyyqQEi3zIqd8m4iSjj2rQf083+e2118ira6lKu9TVj9as9rCfCdjiMib3t3pF54SM3aCdqMN1nNZNjR5JywyPT9ATWlAbxuSHbdIhxNZ1iXae8cm8mbpxTG1ZDiD40J1+LVCBJ+x+hROcOZ4IS2R902IQdBPrUAdRWF/oYqvK1/zQVX666nVy+y+auDeELdUlAVlWRY8eFj5FEN2w5wMchlv+/jxG464N15g/qqHKDHyb9bFlwKqjDZRflTWQ3FmVrM4+hqQdwLhPjsFcb3fN9CruHNhTbxHoLMxIzPrIXksKK5e7DuuKmCu2YIw4dlzFabVIN+s9O9enykQyLZlLOf0THpiX78Ayl0ytD7815BtVLF2e6Qe1RXjs4WpADjUh+LQLAffBP0hOwsam34AWfIG9IUHfniP7FJprzGH0QNW2UWiWnA9BQ1r6sSZr9sJohk0wrWozp2btjGCEw8+XAOlUIGgdvkYUC0KWzhzKnD3kCVtEZ3Kc7yIi0EjbIxcS3YwYO9ROafZidEVFToAp+af1YUes/Kv0yuWMkHtPygiadMStdqr3Vbd/kxGrpJnGA4mhLOaClWQuJr9RO9XPWWK1PeVPMjQ7LYKsKPGa83RlCLNq7/hpJW4uOssK70IDwo+Skqq9Cate8tbQOwRamdkhvnejBk7wnNg6axmY9Z47yhWmStwV3ixevtFnlVQ5o5NHuelu45Lzd0n3dSpX2fNff75bzkFQvRYCJiZfXA4EcmtAogrt7ox7VfMzVwVPpOZSU+aeIXyqUVrNm9xim+hOhAZxOhYdDUYZlSb+CDgswD1ldHtRXfFMi1IXQ8A1CO+soeJBa2streMWKaLlgLTUhvSbE0jqMeVNRApCMekpR/VOcoA3pKsiI/GQb1enyTyUlzTCQ+/60+Fvpxl9elT6rfHEdoCCbO22xraJIDx72jZCDNZAsCRXEnLs5qz/wqXFZVGIvYNBS5mzF2YCwtU=
 
   configmap:
     enabled: true
     data:
+      API_PORT: "8000"
       INTRUM_TENANT_ID: 6202c83f-5533-4b2e-8779-ccb0a08ef106
+      SIGNING_WEBHOOK_WORKERS: '5'
+      IDENTIFICATION_WEBHOOK_WORKERS: '5'
+      USE_DOCUMENTS_FROM_S3: 'true'
+      FORCE_HAPPY_PATH: 'false'
+      TAX_DOC_NAME: 'Tax Self-Certification.pdf'
+      LEGAL_DOCUMENT_LANGUAGES: 'ar,ch,en,fr,it,de,es'
+      INTRUM_SUPPORTED_LANGUAGES: 'fr,de,en,it'
+      TAX_DOC_TRANSLATIONS: '{"en":"Tax Self-Certification.pdf"}'
+      SIGNATURE_PLACEMENT: '{"page":0,"y":5,"x":5,"width":700,"height":100,"fontName":"Arial","fontSize":10,"textVisible":true,"image":"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="}'
+
 
   technicalSecret:
     type: data #stringData, sealedSecret or data
