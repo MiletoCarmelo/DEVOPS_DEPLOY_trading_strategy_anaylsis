@@ -40,7 +40,7 @@ kyc-client-onboarding:
     spec:
       path: /kyc-client-onboarding
       pathType: Prefix
-secrets:
+  secrets:
     type: sealedSecret #stringData, sealedSecret or data
     data: 
       DB_URL: AgAhvRJwGBdRguCu8s4h3jD8+X2bGnC+RzNaRBbaVLJbro/k2FTVUbwUEb+wQQvlpf5k31OR8BqSnB1gyTTvTzKg2Msh8DkfvgNT/gcmFa7DtMnUxOlBoZAOqaVcbqjgF53Eb7Fsw3DHqPO6mQ1G/wEAT1KTz64XIKXtmeVHvS7xFhnsYOH/qh3PX1LreMWGqvFddhUAnpbvYvdChEyPI4ZNbHh4WMdtdBwYVB9E5hluRVLbM+YhnbLcMgrwSHOv/iCOv5+e39NKMnh6DmplL+N1tVCwIQGJKoTmVuX+N7khTS7a3AF09uzqj9WKHxfWFaY9Hb3jqb+eBELBdoLrQBjcJU4HoSvdwgmEhkgaqo/MZo3B+mqcRPtyiOyXYsHm3F5JLA3asqkL2rzOHmeBBn4D9Yt/wv7fJ8vRZo+oB4AvD+4xUQd3/ui6VdQmZjSqq3Wt+44fUIHoF0l28GuVkXiAruS5kfydaeRjcOV+aV7H6eLNA+tEPBWUM8DEzMl7LdhLzzeyWYPuo1HIQ6/dn6wRm+KhZRQYM8Q8T8ynmOjWWMFlQQGS6ZcusOq4TZfz4C8RhP45twlywWV5J5VHZxurG0ILvZemdJY55XKG/exwJuA4wt+ZJCfvTN30PG9cbjddVZUrJHMUL5nRBPy0oytRUo/x194uERHqp5WJasLch4kNIwy9OcNYM/ESiBkanojjJmUownNDqzERLydZgzXUBK8HFuPREaJ1esj384d7EhZMC8qRZZQAkCUMwi5wtyMOGuNivBL8C7uE++U28cU1e8rX3+ZwEQH7QTDkbKKTgrqIDj+lgqxIJJbcmvB+raW9IXSwUcCFVn6S2uY/XURDUDO7l/tqHjeq44aP
