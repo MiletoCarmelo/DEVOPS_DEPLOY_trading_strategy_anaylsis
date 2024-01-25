@@ -12,7 +12,7 @@ kyc-client-onboarding:
       create: true
       name: kyc-client-onboarding-sa
       annotations:
-        eks.amazonaws.com/role-arn: "arn:aws:iam::982073076361:role/apps/kyc_kyc-client-onboarding-sa"
+        eks.amazonaws.com/role-arn: "arn:aws:iam::967198747629:role/apps/kyc_kyc-client-onboarding-sa"
         eks.amazonaws.com/sts-regional-endpoints: "true"
     ports:
       containerPort: 8000
