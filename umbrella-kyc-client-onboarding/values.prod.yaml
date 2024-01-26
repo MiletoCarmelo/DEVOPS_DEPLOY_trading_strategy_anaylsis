@@ -15,7 +15,7 @@ kyc-client-onboarding:
         eks.amazonaws.com/role-arn: "arn:aws:iam::982073076361:role/apps/kyc_kyc-client-onboarding-sa"
         eks.amazonaws.com/sts-regional-endpoints: "true"
     ports:
-      containerPort: 8080
+      containerPort: 8000
     resources:
       requests:
         memory: "250Mi"
@@ -29,7 +29,7 @@ kyc-client-onboarding:
       enable: false
 
   service:
-    port: 8080
+    port: 8000
 
   ingress:
     host: cloud.flowbank.com
