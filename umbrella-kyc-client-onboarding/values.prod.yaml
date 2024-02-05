@@ -65,7 +65,7 @@ kyc-client-onboarding:
       IDENTIFICATION_WEBHOOK_WORKERS: '5'
       USE_DOCUMENTS_FROM_S3: 'true'
       AWS_S3_REGION: 'eu-central-2'
-      AWS_S3_BUCKET: 'flowbank-client-legal-documents-prod'
+      AWS_S3_BUCKET: 'flowbank-client-legal-documents-prod-fb'
       AWS_S3_FOLDER_PREFIX: 'flowbank_client_legal_documents_'
       FORCE_HAPPY_PATH: 'false'
       TAX_DOC_NAME: 'Tax Self-Certification.pdf'
