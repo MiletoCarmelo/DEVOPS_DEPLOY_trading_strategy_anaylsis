@@ -12,7 +12,7 @@ kyc-client-onboarding:
       create: true
       name: kyc-client-onboarding-sa
       annotations:
-        eks.amazonaws.com/role-arn: "arn:aws:iam::967198747629:role/apps/kyc_kyc-client-onboarding-sa"
+        eks.amazonaws.com/role-arn: "arn:aws:iam::058264183361:role/apps/kyc_kyc-client-onboarding-sa"
         eks.amazonaws.com/sts-regional-endpoints: "true"
     ports:
       containerPort: 8000
@@ -32,7 +32,7 @@ kyc-client-onboarding:
     port: 8000
 
   ingress:
-    host: cloud-uat.flowbank.com
+    host: cloud-stg.flowbank.com
     enable: true
     metadata:
       annotations:
@@ -66,14 +66,14 @@ kyc-client-onboarding:
       IDENTIFICATION_WEBHOOK_WORKERS: '5'
       USE_DOCUMENTS_FROM_S3: 'true'
       AWS_S3_REGION: 'eu-central-2'
-      AWS_S3_BUCKET: 'flowbank-client-legal-documents-uat'
+      AWS_S3_BUCKET: 'flowbank-client-legal-documents-stg'
       AWS_S3_FOLDER_PREFIX: 'flowbank_client_legal_documents_'
       FORCE_HAPPY_PATH: 'false'
       TAX_DOC_NAME: 'Tax Self-Certification.pdf'
-      SIGNING_REDIRECT_SUCCESS_URL: 'https://my-pega-uat.flowbank.com/onboarding'
-      SIGNING_REDIRECT_FAILED_URL: 'https://my-pega-uat.flowbank.com/onboarding'
-      SIGNING_REDIRECT_REDIRECT_URL: 'https://my-pega-uat.flowbank.com/onboarding'
-      SIGNING_REDIRECT_TIMEOUT_URL: 'https://my-pega-uat.flowbank.com/onboarding'
+      SIGNING_REDIRECT_SUCCESS_URL: 'https://my-pega-stg.flowbank.com/onboarding'
+      SIGNING_REDIRECT_FAILED_URL: 'https://my-pega-stg.flowbank.com/onboarding'
+      SIGNING_REDIRECT_REDIRECT_URL: 'https://my-pega-stg.flowbank.com/onboarding'
+      SIGNING_REDIRECT_TIMEOUT_URL: 'https://my-pega-stg.flowbank.com/onboarding'
       LEGAL_DOCUMENT_LANGUAGES: 'ar,ch,en,fr,it,de,es'
       INTRUM_SUPPORTED_LANGUAGES: 'fr,de,en,it'
       TAX_DOC_TRANSLATIONS: '{"en":"Tax Self-Certification.pdf"}'
