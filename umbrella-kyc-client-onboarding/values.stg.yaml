@@ -1,0 +1,84 @@
+kyc-client-onboarding:
+  module: kyc-client-onboarding
+
+  replicas: 2
+
+  containers:
+    image: ghcr.io/flowbanksa/dev_kyc_client_onboarding
+    name: kyc-client-onboarding
+    tags: v0.1.92
+    serviceAccount:
+      enabled: true
+      create: true
+      name: kyc-client-onboarding-sa
+      annotations:
+        eks.amazonaws.com/role-arn: "arn:aws:iam::967198747629:role/apps/kyc_kyc-client-onboarding-sa"
+        eks.amazonaws.com/sts-regional-endpoints: "true"
+    ports:
+      containerPort: 8000
+    resources:
+      requests:
+        memory: "250Mi"
+        cpu: "500m"
+      limits:
+        memory: "250Mi"
+        cpu: "500m"
+    sqlite:
+      enable: false
+    redis:
+      enable: false
+
+  service:
+    port: 8000
+
+  ingress:
+    host: cloud-uat.flowbank.com
+    enable: true
+    metadata:
+      annotations:
+        haproxy.org/path-rewrite: /kyc-client-onboarding/(.*) /\1
+    spec:
+      path: /kyc-client-onboarding
+      pathType: Prefix
+
+  secrets:
+    type: sealedSecret #stringData, sealedSecret or data
+    data:
+      DB_URL: AgAJpdu1bh+csqrwNINr9szEA61CCaGXLupDsJFgdZbL+CM78Opojge6bHDTaAM1eVqQabfR0Co6HafYn0G8UFy8MHA5kqZs4oxbUjlj1J4ZHOGibXRPYcoyj260Fsy1wc0X7soe2OKPwaIotufw1KMcNMgWgMli+gDLlQGIme1TLofxFvX66N6KkUGTOJshZTEkzXsnrRIp9e+Jum/LTh2srGB24BhJDxgYp0PuZRLQ03uxoR2+Dimjp4NTxzeoUYnxKtPv8r5KUltCW3CL6wIIJL/BTw90qCL/qiZAxM+VlX17PMUAcd5mjnSzaygM3zp+XD1qMIZBVIDa0VCk4AX2GIwDMWMUeQVRGf5uBtteFJCQD9gVxi+6L3R92uRIEFVAOZ4DIYsK0FkJQ9g0QSYhAGulfcju7Co8i9bk0FBLlzsXlA94C66L6PKQCd1Pmp5TGLI3bVzKd1OcIgkaR8Jkb7Jn3u3Zo0mykLSE30RHr1fhNkeukYsrMj+Src7IRDGNZ6kVFyffTRUpurFni/RkuodszZcyc//GF0CNfYa5IaXM50p2iPgxYez320/hqmYiB5Dg5SyhCBqeGayEJgq+hcCmxnC/eWP/gynFw2nzMr1/vdsgAzsEAghHnOOylLsvb0sironyDsjBGWLjimhccgRxHBDTsNcqDt51/+/tZxaCvkqYtxvSkbqAMyC6IRSIokRb0jsl5YmhCoIns8bg8veCzX2VbymR4KEpk804N+LEcJcGXV3J1vjQsUatLT+TnhMCKwE61C0WbX61ndqtKoRa5G9WOLlpzVu7942vG5B9H1Wz3XkKiqnvASF/tBrQNl9RfwLMwwBtg0NUfhB76I/v6/x0YfAbkA==
+      GOOGLE_API_KEY: AgAKcWHOHHZ8aX+sK0nhQNFYBPGtSmsl0u6+QuDr32xruFivFIUnnZZheMswHnOLJAzy6IHEjzNKVdB2FzwgznlVleh2QG+PJyZTqwN+W/u+PZ/j76+oa80PpC0TGD+JdkRb0LQnrqsHA82SasXmwYZzB2y7FfbdMNiF1LXRhKp84GtXNZT8RSXiiJb78CVscXw8bL1H5sZb4VpNf+1EIUyFsT2JwYVX44Turl5DSDQLjEA1OO9YLblqEFBb9znLQBOh9cNn4oOzos+WR6vifBHv3arfHQd66wa27++VA8Wh6QdoP/9fqeKTd8ksK+baFyYFTizH0oCtHN37Bj6XRiXTh7L3NmFRbGFtxYt6M8CgTtmgaOeQa+qnZeUt3pttEDPC+b61toBJDwhQ3nrVa8I3+psvvC+QdxXp+1qcH23kfUU/9wt86lWB1sjk7XBxsWMY1HuTlTB5ARCtSTUQg+x6Oo8tKvVZ6b9Ah0BL/23yLk+0+VNieMLjp+CVFBUVFAATCLuY+5avaKnhJVDGLtRkwzJ+O+ssWspXUA1pD1YSHhKLT/GTlQHppK9VIclfuPopQLU+7xLFyVr/4zB8YwVwzkFrgLGiJ0JZjDzJk6Ag6G39LRlT2rYwKsLumfl3CzwbbvBDOPTaYwXetNuMW0OQSU8G5oM79Z5IZUDzMdDUd0zxoBnX4I3+2Fy7/BsOfDrHUnbdLjCO4gt+oktq5qRhvFXi2o+2SstsXGBvQkBftTv30+srAFY=
+      INTRUM_JWT: AgCcSKoEP3Ihh3ptQ+ki1tfQXo+ZxtAFeIrIjV/hvLGVX780pgOOLvBHdE7PLfS09rzoCaHEIYZxQ1afvmeYeUyhQ0aIJhdoPjDwcA1CYdt/HAGP619iQGjlv4SO8KaDRg23ORJHbPJCbCKogKheM6pdTHxbywxS/LoGpsgCc6+3pDKtU95yHilXZ0FaM2ylL+zoUO5ezNejjA/i1mdXAhUhowaSUYaNbFH84eYIU+6jZU9SD073QYg4Bun7E2H6RBPTnUyrly4KoNH3uWQZhvPawpWSHURT287EeeILzYSa7tYAY1fIHPvegSD5ZdGqpRz3EZLtxTu9N6bzoYHeB5wZ3+9qWrNraQhkZr6D7VmuAZs3YAQrx/w3yegPIU0/GnKJIPp1Monamos9chn6dUnRekcq0SEhtNv0ZDzDmDRE7qNLFWPkbDoDP+xoHZnNAPPt2Vwu3H0LYgpDYTtKdN5gul4VNKebw2fBYfo65gEGriVeHeEu9AfuCujRiGnrNM2FHVqRpp1128BRx3Jne2+rl3YtllGuaYeayTVjynu1C/9m7b8TVrMPR5mIAYcJJcDRHpqnCMmNgVkoLREtWUJQwcjSseWHOmPc0z/2JaEu6iZk4zwII1bdHHE6B16oWTsED20dlt66ZId47do/qrGL1N1iQaiXync/oIvxEQkInwK8cFMGJFtRBg20wHTcYfudEi7BYFWavYUYvx9fN6uaMghQ0csV7iWDfEbP9Gk4dACIC0UQYN4UT8QaNQ6D+qqqaQrvP6vPdpf18WDudmLghAHxIBYa6UmDfalRu2JensLP3B3tEwTmcCSK3v1fidBHkElFyLrYvI7mPLJtJznTf8+whtPz3wcNt1xlECdTxbooLol0oCgZQcCQ4b+yGk+RX+lpH1l/a1cYSN2TGux9MF4czKLDFaKh2+Kdrp8gZgcnj6vEy0ocGTB/cnZl0hedfa7v48UgfTde32S2Tkj/CWK2Zu2/18eoWPsz6sJR+G7dpXPwczv+Pd6ntz/JN6DRwF5pZxSkHoPHFrexrhBnYnGbkZDXVi6o17dcEevS/4lRMbCEupwElUaxC2TTx4fRPg573vMZN0FYGyYFS20=
+      INTRUM_PASSWORD: AgA3md3iKxSxQBTDwWNHJHopmNRJxXvwpvz3PmToA6dvTwB04UMQ0FixXKOiHGPfp91kmgIgPJy2W7JexIHIWqwwMbOZMjUv6WXK/AAVv+gMf/RyES8TJQx0aryIjhdc/EEdVjVJeAur7IVZrk1cd1FtAIjPNlmzXuf+/8D//M3eGk6yYCJ6y57AxuB2c6P1fnjHkgr9bbSRu/lxTGyhRHX5Ip7bwqI9Iwni9rTxCkTovfTZKdau37grFMhIEd1IozDfx5XoR1gdwEp81GQhMj0eKG3qqwFoPJexa4o1uza4HsHl1u8QhVI+AkR/xdHd/ua4n6W3kWr1ljcJ/r5Y0VLYzwqEKziSGoYcDouhzW7lxzAEBDdZFgjrrwv41N63zovJUKUWh6AUHsaQk76XIC2iG8ocY3O7gDYhI0V5vVRVqJfUMPt/Pplkvi+5yDoEO85IkeJretEb3UClY3o+Nhn6p0iQOJSe1dZTeRZQ+Vps84PKhy4N1hWob1qc/XDKyBNYWpZ2FJibk9n5WrwTfTahGEtB8oT9+5NJIaCiynoGKtbhHb8I3LeEXPHfctOOnA0TJyQBKcZ7un+NaMAYQLbYlgkGL9G1hC33abgUzTvE71JZpIhM0Ppi8Owijnn7xIjLeXSOHVFBYK/reYPtgq9RcIooFcdUdCh9XqzUuDZxv0TU6M8hvKJWxwiqMhCSDNrosbQ2k0r3d7XPCuAcxvBbxw9hzg==
+      OKTA_CLIENT_SECRET: AgDMiUSdetijqjlrU+bbzhxrUsFSdnQrAV2h4f06OWDi0UOssTFNCieC2OHECEyNIkxWRkaiNVe1pjjmjc4oj36hPMvoUHP5zACAO2XrYNt9K4bdHMUXovVRdJNJNEmhDR9q77exTy9MH0czcdGiglXuqaM3nmZHImw7tGaEGOsx/v6aCQKBel7A9TgWYk1fLq+8T8/oAFPp+qkQu/W2oev0gXfWGbS7L4qWg2iuoxtMFAtbnzAlb1DyIlX/q4DVWnyinzjBxrBLns4LlGWD6PFI7q3OYvEMmMKLDfnurXlDlXAzrT8BaE6uMhBYMipYkGlCvWkL6/6xhFsjBojsHWwG5m1+ABXTBm5kBZOHpjF5wH71unBTDHYuodd6sSrDd8l9BLEChwKimoMwfPywjQHCf+RJiPSUhaPEQafvRfq2siu8UqiHavcl/m8/2hSimC/TJ4amluLNzutLAvpTvJrRiEAVA3TuNt3FYQqjpaEp7q6a2VQoKmAcfT2j4FhV4vH0vmSlvRocZwzTy+cw1tmO+ZOonpoh7/pvo4PrSGsmXO4/rGkHE/yJsbz16pJKTvvQtl+LTuJNHV06Q404l1bhLsxoOnbZSEAkSkvVjqXsX0EkR5f4NemBaawmQE9NsuCsHzsYCf2eZhO4D89LiwYsIM2fbM3o4QWqGkvoKpf8rp+AcL+8vjNFt1Vl0RXeeJluDsYt5bDnonKMQwJaOmq3+ntA1ndBaBXeRZJlWeblfuvm63B/hXDyd1uYXHbGEFuq1iOPG/ChfHJ3lqqfsfZs
+      PEGA_PASSWORD: AgBoKmD/4E7BDyVXDNpFNPlGzTBdAyUr1Ope9NaKuGwevSeDvLFt9ji912NUitlbRKSNgb6SqoTWEyLFq43CnYcNWP5V4zwMk6Wxyqu50BHaGMLhR0jdzlAt92XfXbZ9U1rLex10dme3jS4tgymqcVjuHUvX7u55omAfIkqcoEh+r8gCGcInU++HSKvwEFy3IN3idIirhchVZpwEiE2xoEqkCgUkiRs7S/tPDedaTdt4RMHs/FGUTaKEOvENOTHzA0vm7amShHPIExDzJLdYMxaKNhSChhlAqsXgKFwMYF7wbTSXDcCVB6/8Ko7xoGAw+vsfnR47Fxv369y3Zuzen2RsFCHqeoa9B0LbxzolvlcA2OA+v7PY2tDE+DmtnYnkO0pTq5YVTXlYZTZ0B8DXD0Jn0uN7Bu49QFas7gMub2NfPbIgr1TDaPBlmcZXmjLfoQO+w4ECi86BmTt1b9h8IjQrOQryaETd5QzN2qCxyklqwAUa18P/51L9jqZT2vdFUqgqxG7DzyM3X+sonF0YtXOjVE4lWVyilGJQyL1HdxX9fjdTF99OMreSxqAYf1tK6zXvmpn51dXLLn3+JYF/zV6wXfgJ8SrKU5b1VBcCrLuHSheKw3YMerjL2hj8SdtA/cxw07cN7CXzHZ4/BmvNBUS4BrQnjcfpgInWPGXhDh7JIRVdvZVYJTc+wdOnNePpWo0HlaVUfYvq/YH0k4bjLvs1ojodcA42tr1Vj85dfSvm9Q==
+  
+  configmap:
+    enabled: true
+    data:
+      OKTA_DOMAIN: "flowbank-uat.eu.auth0.com"
+      API_PORT: "8000"
+      PEGA_USER: "25253149798704441241"
+      PEGA_URL: "https://flbkpr-flow-st1.pega.net/prweb/api/FBCLMUTA"
+      PEGA_TOKEN_URL: "https://flbkpr-flow-st1.pega.net/prweb/PRRestService/oauth2/v1/token"
+      OKTA_CLIENT_ID: JMJFD88Ub3fRvKOla5wEDvouSAGYdGRr
+      INTRUM_DOMAIN: https://sandbox-autoid.id-validation.ch
+      INTRUM_TENANT_ID: c9ca6d4b-344f-4f3a-8ef2-fd3610abc789
+      SIGNING_WEBHOOK_WORKERS: '5'
+      IDENTIFICATION_WEBHOOK_WORKERS: '5'
+      USE_DOCUMENTS_FROM_S3: 'true'
+      AWS_S3_REGION: 'eu-central-2'
+      AWS_S3_BUCKET: 'flowbank-client-legal-documents-uat'
+      AWS_S3_FOLDER_PREFIX: 'flowbank_client_legal_documents_'
+      FORCE_HAPPY_PATH: 'false'
+      TAX_DOC_NAME: 'Tax Self-Certification.pdf'
+      SIGNING_REDIRECT_SUCCESS_URL: 'https://my-pega-uat.flowbank.com/onboarding'
+      SIGNING_REDIRECT_FAILED_URL: 'https://my-pega-uat.flowbank.com/onboarding'
+      SIGNING_REDIRECT_REDIRECT_URL: 'https://my-pega-uat.flowbank.com/onboarding'
+      SIGNING_REDIRECT_TIMEOUT_URL: 'https://my-pega-uat.flowbank.com/onboarding'
+      LEGAL_DOCUMENT_LANGUAGES: 'ar,ch,en,fr,it,de,es'
+      INTRUM_SUPPORTED_LANGUAGES: 'fr,de,en,it'
+      TAX_DOC_TRANSLATIONS: '{"en":"Tax Self-Certification.pdf"}'
+      SIGNATURE_PLACEMENT: '{"page":0,"y":5,"x":5,"width":700,"height":100,"fontName":"Arial","fontSize":10,"textVisible":true,"image":"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="}'
+
+  technicalSecret:
+    type: data #stringData, sealedSecret or data
+    githubSecret: eyJhdXRocyI6eyJnaGNyLmlvIjp7InVzZXJuYW1lIjoiRGViem91IiwicGFzc3dvcmQiOiJnaHBfQ2sxWEc2aDhBd0NXWjVXSjlKbDNDZlpYZmkzM3NtMnFZQVJOIiwiYXV0aCI6IlJHVmllbTkxT21kb2NGOURhekZZUnpab09FRjNRMWRhTlZkS09VcHNNME5tV2xobWFUTXpjMjB5Y1ZsQlVrND0ifX19
