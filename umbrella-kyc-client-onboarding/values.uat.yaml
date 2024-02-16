@@ -54,7 +54,7 @@ kyc-client-onboarding:
   configmap:
     enabled: true
     data:
-      OKTA_DOMAIN: "auth.my-pega-uat.flowbank.com"
+      OKTA_DOMAIN: "flowbank-uat.eu.auth0.com"
       API_PORT: "8000"
       PEGA_USER: "25253149798704441241"
       PEGA_URL: "https://flbkpr-flow-st1.pega.net/prweb/api/FBCLMUTA"
