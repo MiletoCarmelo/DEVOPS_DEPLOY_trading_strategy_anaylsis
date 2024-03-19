@@ -6,7 +6,7 @@ kyc-client-onboarding:
   containers:
     image: ghcr.io/flowbanksa/dev_kyc_client_onboarding
     name: kyc-client-onboarding
-    tags: v0.1.101
+    tags: v0.1.103
     serviceAccount:
       enabled: true
       create: true
@@ -60,7 +60,7 @@ kyc-client-onboarding:
       PEGA_URL: "https://flbkpr-flow-prd1.pega.net/prweb/api/FBCLMUTA"
       PEGA_TOKEN_URL: "https://flbkpr-flow-prd1.pega.net/prweb/PRRestService/oauth2/v1/token"
       OKTA_CLIENT_ID: 6hju5ujhDGej8s3sOaUEgFNGvO6ecP4G
-      INTRUM_DOMAIN: https://autoid.ubiid.ch
+      INTRUM_DOMAIN: https://autoid.id-validation.ch
       INTRUM_TENANT_ID: 6202c83f-5533-4b2e-8779-ccb0a08ef106
       SIGNING_WEBHOOK_WORKERS: '5'
       IDENTIFICATION_WEBHOOK_WORKERS: '5'
