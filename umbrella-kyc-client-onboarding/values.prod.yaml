@@ -6,7 +6,7 @@ kyc-client-onboarding:
   containers:
     image: ghcr.io/flowbanksa/dev_kyc_client_onboarding
     name: kyc-client-onboarding
-    tags: v0.1.103
+    tags: v0.1.106
     serviceAccount:
       enabled: true
       create: true
