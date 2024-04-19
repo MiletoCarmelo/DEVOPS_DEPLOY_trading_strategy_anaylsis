@@ -6,7 +6,7 @@ kyc-client-onboarding:
   containers:
     image: ghcr.io/flowbanksa/dev_kyc_client_onboarding
     name: kyc-client-onboarding
-    tags: v0.1.111
+    tags: v0.1.112
     serviceAccount:
       enabled: true
       create: true
@@ -82,6 +82,9 @@ kyc-client-onboarding:
       INTRUM_SUPPORTED_LANGUAGES: 'fr,de,en,it'
       TAX_DOC_TRANSLATIONS: '{"en":"Tax Self-Certification.pdf"}'
       SIGNATURE_PLACEMENT: '{"page":0,"y":5,"x":5,"width":700,"height":100,"fontName":"Arial","fontSize":10,"textVisible":true,"image":"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="}'
+      SMTP_PORT: "2587"
+      SMTP_RECIPIENT: "support@flowbank.com"
+      SMTP_SENDER: "onboardingSupport@flowbank.com"
 
   technicalSecret:
     type: data #stringData, sealedSecret or data
