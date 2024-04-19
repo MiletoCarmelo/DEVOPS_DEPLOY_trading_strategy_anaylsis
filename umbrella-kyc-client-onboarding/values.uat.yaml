@@ -85,7 +85,6 @@ kyc-client-onboarding:
       SMTP_PORT: "2587"
       SMTP_RECIPIENT: "support@flowbank.com"
       SMTP_SENDER: "onboardingSupport@flowbank.com"
-      
 
   technicalSecret:
     type: data #stringData, sealedSecret or data
