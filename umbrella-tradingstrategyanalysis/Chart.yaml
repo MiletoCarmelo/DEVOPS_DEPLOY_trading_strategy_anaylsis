@@ -1,6 +1,6 @@
 apiVersion: v2
-name: tnf
-description: A Helm chart for Kubernetes
+name: tradingstrategyanalysis
+description: A Helm chart for TradingStrategyAnalysis frontend application
 
 # A chart can be either an 'application' or a 'library' chart.
 #
@@ -21,10 +21,10 @@ version: 0.1.0
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
 # It is recommended to use it with quotes.
-appVersion: "1.16.0"
+appVersion: "1.1.0"
 
 dependencies:
-  - name: generic-golang-backend
-    version: 0.6.1
-    repository: https://raw.githubusercontent.com/FlowbankSA/DEVOPS_HELM_generic_golang_backend/github-pages
-    alias: kyc-client-onboarding
+  - name: generic_python_frontend
+    version: 0.1.0
+    repository: https://raw.githubusercontent.com/miletocarmelo/DEVOPS_HELM_generic_python_frontend/github-pages
+    alias: tradingstrategyanalysis-frontend
