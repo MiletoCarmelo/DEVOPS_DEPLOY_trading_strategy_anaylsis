@@ -11,7 +11,7 @@ trading-strategy-analysis:
     name: tranding-strategy-analysis
     tags: latest
     ports:
-      containerPort: http
+      containerPort: 80 # Changed from 'http' to '80' for consistency
     resources:
       requests:
         memory: "512Mi"
