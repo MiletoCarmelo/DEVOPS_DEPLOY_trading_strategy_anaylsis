@@ -29,7 +29,7 @@ trading-strategy-analysis:
     targetPort: http
 
   ingress:
-    host: myhost  # Moved this out of 'hosts' array for simplicity
+    host: www.quant-cm.com  # Moved this out of 'hosts' array for simplicity
     enabled: true  # Changed from 'enable' to 'enabled' for consistency
     metadata:
       annotations:
