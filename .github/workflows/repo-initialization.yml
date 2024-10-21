@@ -40,7 +40,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        branch: github-pages
+        
+        
 
     - name: Create DEV branch
       if: ${{startsWith(env.REPO_NAME, 'QUA_')}}
