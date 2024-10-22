@@ -29,7 +29,7 @@ trading-strategy-analysis:
     targetPort: 80
 
   ingress:
-    host: dev.quant-cm.com  # Moved this out of 'hosts' array for simplicity
+    host: quant-cm.com  # Moved this out of 'hosts' array for simplicity
     enabled: true  # Changed from 'enable' to 'enabled' for consistency
     metadata:
       annotations:
