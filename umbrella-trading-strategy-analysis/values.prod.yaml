@@ -34,7 +34,7 @@ trading-strategy-analysis:
     metadata:
       annotations:
         kubernetes.io/ingress.class: nginx  # Added this common annotation
-        nginx.ingress.kubernetes.io/rewrite-target: /  # Changed from pathRewrite
+        nginx.ingress.kubernetes.io/rewrite-target: /$1  # Changed from pathRewrite
     spec:
       path: /trading-strategy-analysis
       pathType: Prefix
