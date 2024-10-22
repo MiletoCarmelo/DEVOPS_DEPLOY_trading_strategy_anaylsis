@@ -25,7 +25,7 @@ trading-strategy-analysis:
       enabled: false
 
   service:
-    port: 80
+    port: 8045
     targetPort: 80
 
   ingress:
