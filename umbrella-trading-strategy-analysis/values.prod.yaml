@@ -26,7 +26,7 @@ trading-strategy-analysis:
 
   service:
     port: 80
-    targetPort: 8080
+    targetPort: 80
 
   ingress:
     host: www.quant-cm.com  # Moved this out of 'hosts' array for simplicity
