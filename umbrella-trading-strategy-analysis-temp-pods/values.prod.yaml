@@ -1,6 +1,19 @@
-trading-strategy-analysis:
-  
-  module: trading-strategy-analysis
+# values.dev.yaml
+trading-strategy-analysis-temp-pod:
+
+  module: trading-strategy-analysis-temp-pod
+
+  k8s:  # Ajout nécessaire
+    component: pod-manager
+
+  podManager:  # Configuration manquante
+    enabled: true  # ou false selon le besoin
+    ttl: 1800
+    rbac:
+      rules:
+        - apiGroups: [""]
+          resources: ["pods", "services"]
+          verbs: ["create", "delete", "get", "list"]
 
   environment: prod
 
@@ -8,7 +21,7 @@ trading-strategy-analysis:
 
   containers:
     image: ghcr.io/miletocarmelo/tradingstrategyanalysis
-    name: tranding-strategy-analysis
+    name: tranding-strategy-analysis-temp-pod
     tags: latest
     ports:
       containerPort: 80 # Changed from 'http' to '80' for consistency
@@ -25,7 +38,7 @@ trading-strategy-analysis:
       enabled: false
 
   service:
-    port: 8045
+    port: 8042
     targetPort: 80
 
   ingress:
@@ -36,7 +49,7 @@ trading-strategy-analysis:
         kubernetes.io/ingress.class: nginx  # Added this common annotation
         nginx.ingress.kubernetes.io/rewrite-target: /$1  # Changed from pathRewrite
     spec:
-      path: /trading-strategy-analysis
+      path: /trading-strategy-analysis-temp-pod
       pathType: Prefix
 
   configmap:
