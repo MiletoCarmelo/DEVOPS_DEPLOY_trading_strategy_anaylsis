@@ -21,7 +21,7 @@ trading-strategy-analysis-temp-pod:
 
   containers:
     image: ghcr.io/miletocarmelo/tradingstrategyanalysis
-    name: tranding-strategy-analysis-temp-pod
+    name: tranding-strategy-analysis
     tags: latest
     ports:
       containerPort: 80 # Changed from 'http' to '80' for consistency
@@ -38,7 +38,7 @@ trading-strategy-analysis-temp-pod:
       enabled: false
 
   service:
-    port: 8042
+    port: 8046
     targetPort: 80
 
   ingress:

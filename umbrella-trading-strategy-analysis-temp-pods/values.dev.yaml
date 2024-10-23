@@ -21,7 +21,7 @@ trading-strategy-analysis-temp-pod:
 
   containers:
     image: ghcr.io/miletocarmelo/tradingstrategyanalysis
-    name: tranding-strategy-analysis-temp-pod
+    name: tranding-strategy-analysis
     tags: latest
     ports:
       containerPort: 80 # Changed from 'http' to '80' for consistency
@@ -49,7 +49,7 @@ trading-strategy-analysis-temp-pod:
         kubernetes.io/ingress.class: nginx  # Added this common annotation
         nginx.ingress.kubernetes.io/rewrite-target: /$1  # If you want path rewriting
     spec:
-      path: /trading-strategy-analysis-temp-pod
+      path: /trading-strategy-analysis-temp-pods
       pathType: Prefix
 
   configmap:
