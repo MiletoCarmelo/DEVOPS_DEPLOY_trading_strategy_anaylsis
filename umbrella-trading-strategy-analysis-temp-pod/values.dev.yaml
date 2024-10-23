@@ -49,7 +49,7 @@ trading-strategy-analysis-temp-pod:
         kubernetes.io/ingress.class: nginx  # Added this common annotation
         nginx.ingress.kubernetes.io/rewrite-target: /$1  # If you want path rewriting
     spec:
-      path: /trading-strategy-analysis-temp-pods
+      path: /trading-strategy-analysis-temp-pod
       pathType: Prefix
 
   configmap:
