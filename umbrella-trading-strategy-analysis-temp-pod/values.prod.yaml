@@ -1,10 +1,7 @@
 # values.dev.yaml
 trading-strategy-analysis-temp-pod:
 
-  module: trading-strategy-analysis-temp-pod
-
-  k8s:  # Ajout nécessaire
-    component: pod-manager
+  module: tsa-pod
 
   podManager:  # Configuration manquante
     enabled: true  # ou false selon le besoin
@@ -21,7 +18,7 @@ trading-strategy-analysis-temp-pod:
 
   containers:
     image: ghcr.io/miletocarmelo/tradingstrategyanalysis
-    name: tranding-strategy-analysis-temp-pod
+    name: tsa-pod-app
     tags: latest
     ports:
       containerPort: 80 # Changed from 'http' to '80' for consistency

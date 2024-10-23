@@ -1,0 +1,6 @@
+dependencies:
+- name: generic-python-frontend-temp-pod
+  repository: https://raw.githubusercontent.com/MiletoCarmelo/DEVOPS_HELM_generic_python_frontend_temporary_pods_creation/github-pages
+  version: 0.1.0
+digest: sha256:7874bb0f64c889ba944a365e7ee4fc13f92cda4a1ad71dcda166fc6c7eeff74c
+generated: "2024-10-23T17:29:11.887222868+02:00"
