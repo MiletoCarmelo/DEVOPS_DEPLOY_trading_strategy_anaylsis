@@ -3,6 +3,8 @@ tsa-pod:  # Ajoutez ce niveau pour correspondre au nom du subchart
   
   module: tsa-no-pod
 
+  chartName: tsa-no-pod
+
   name: tsa-no-pod
 
   podManager:  # Configuration manquante
@@ -36,7 +38,7 @@ tsa-pod:  # Ajoutez ce niveau pour correspondre au nom du subchart
     redis:
       enabled: false
   service:
-    port: 8046
+    port: 8080
     targetPort: 80
 
   ingress:

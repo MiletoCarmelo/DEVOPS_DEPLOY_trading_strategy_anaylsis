@@ -1,7 +1,9 @@
 # values.dev.yaml
 tsa-pod:  # Ajoutez ce niveau pour correspondre au nom du subchart
   
-  module: tsa-pod  
+  module: tsa-pod 
+
+  chartName: tsa-pod 
 
   name: tsa-pod
 
@@ -37,7 +39,7 @@ tsa-pod:  # Ajoutez ce niveau pour correspondre au nom du subchart
       enabled: false
 
   service:
-    port: 8041
+    port: 8080
     targetPort: 80
 
   ingress:
