@@ -1,9 +1,9 @@
 # values.prod.yaml
 tsa-pod:  # Ajoutez ce niveau pour correspondre au nom du subchart
   
-  module: tsa-pod
+  module: tsa-no-pods
 
-  name: tsa-pod
+  name: tsa-no-pods
 
   podManager:  # Configuration manquante
     enabled: true  # ou false selon le besoin
