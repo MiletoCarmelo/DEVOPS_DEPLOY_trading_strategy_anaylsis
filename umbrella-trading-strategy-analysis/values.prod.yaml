@@ -1,7 +1,7 @@
 trading-strategy-analysis:
   
-  module: trading-strategy-analysis
-
+  module: tsa
+  
   environment: prod
 
   replicas: 1
