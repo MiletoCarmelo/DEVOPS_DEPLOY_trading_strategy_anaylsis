@@ -35,6 +35,10 @@ tsa-pod:  # Ajoutez ce niveau pour correspondre au nom du subchart
       enabled: false
     redis:
       enabled: false
+    command: bash
+    args:
+      - -c
+      - /scripts/pod-manager.sh
 
   service:
     port: 8041
