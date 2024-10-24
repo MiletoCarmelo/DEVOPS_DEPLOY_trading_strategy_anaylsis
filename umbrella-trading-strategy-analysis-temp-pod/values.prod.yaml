@@ -1,53 +1,51 @@
 # values.dev.yaml
-trading-strategy-analysis-temp-pod:
+module: tsa-pod
 
-  module: tsa-pod
+podManager:  # Configuration manquante
+  enabled: true  # ou false selon le besoin
+  ttl: 1800
+  rbac:
+    rules:
+      - apiGroups: [""]
+        resources: ["pods", "services"]
+        verbs: ["create", "delete", "get", "list"]
 
-  podManager:  # Configuration manquante
-    enabled: true  # ou false selon le besoin
-    ttl: 1800
-    rbac:
-      rules:
-        - apiGroups: [""]
-          resources: ["pods", "services"]
-          verbs: ["create", "delete", "get", "list"]
+environment: prod
 
-  environment: prod
+replicas: 1
 
-  replicas: 1
-
-  containers:
-    image: ghcr.io/miletocarmelo/tradingstrategyanalysis
-    name: tsa-pod-app
-    tags: latest
-    ports:
-      containerPort: 80 # Changed from 'http' to '80' for consistency
-    resources:
-      requests:
-        memory: "1Gi"        # Augmenté de 512Mi à 1Gi
-        cpu: "500m"          # Augmenté de 200m à 500m
-      limits:
-        memory: "2Gi"        # Augmenté de 1024Mi à 2Gi
-        cpu: "1000m"         # Augmenté de 200m à 1000m (équivalent à 1 CPU)
-    sqlite:
-      enabled: false
-    redis:
-      enabled: false
-
-  service:
-    port: 8046
-    targetPort: 80
-
-  ingress:
-    host: quant-cm.com  # Moved this out of 'hosts' array for simplicity
-    enabled: true  # Changed from 'enable' to 'enabled' for consistency
-    metadata:
-      annotations:
-        kubernetes.io/ingress.class: nginx  # Added this common annotation
-        nginx.ingress.kubernetes.io/rewrite-target: /$1  # Changed from pathRewrite
-    spec:
-      path: /trading-strategy-analysis-temp-pod
-      pathType: Prefix
-
-  configmap:
+containers:
+  image: ghcr.io/miletocarmelo/tradingstrategyanalysis
+  name: tsa-pod-app
+  tags: latest
+  ports:
+    containerPort: 80 # Changed from 'http' to '80' for consistency
+  resources:
+    requests:
+      memory: "1Gi"        # Augmenté de 512Mi à 1Gi
+      cpu: "500m"          # Augmenté de 200m à 500m
+    limits:
+      memory: "2Gi"        # Augmenté de 1024Mi à 2Gi
+      cpu: "1000m"         # Augmenté de 200m à 1000m (équivalent à 1 CPU)
+  sqlite:
     enabled: false
+  redis:
+    enabled: false
+
+service:
+  port: 8046
+  targetPort: 80
+
+ingress:
+  host: quant-cm.com  # Moved this out of 'hosts' array for simplicity
+  enabled: true  # Changed from 'enable' to 'enabled' for consistency
+  metadata:
+    annotations:
+      kubernetes.io/ingress.class: nginx  # Added this common annotation
+      nginx.ingress.kubernetes.io/rewrite-target: /$1  # Changed from pathRewrite
+  spec:
+    path: /tsa-pod
+    pathType: Prefix
+
+configmap:
+  enabled: false
