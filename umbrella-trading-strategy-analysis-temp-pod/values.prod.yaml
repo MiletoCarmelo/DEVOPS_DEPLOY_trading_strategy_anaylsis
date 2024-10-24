@@ -1,4 +1,4 @@
-# values.dev.yaml
+# values.prod.yaml
 module: tsa-pod
 
 podManager:  # Configuration manquante
