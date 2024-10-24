@@ -1,6 +1,6 @@
 # Chart.yaml
 apiVersion: v2
-name: tradings-trategy-analysis-temp-pod
+name: tsa-pod
 description: A Helm chart for TradingStrategyAnalysis frontend application
 
 # A chart can be either an 'application' or a 'library' chart.
