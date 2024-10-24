@@ -1,6 +1,8 @@
 # values.dev.yaml
 module: tsa-pod  
 
+name: tsa-pod
+
 podManager:  # Configuration manquante
   enabled: true  # ou false selon le besoin
   ttl: 1800

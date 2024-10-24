@@ -1,5 +1,7 @@
 module: tsa
 
+name: tsa
+
 environment: prod
 
 replicas: 1
