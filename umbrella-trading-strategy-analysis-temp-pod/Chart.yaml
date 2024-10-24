@@ -28,4 +28,4 @@ dependencies:
   - name: generic-python-frontend-temp-pod
     version: 0.1.0
     repository: https://raw.githubusercontent.com/MiletoCarmelo/DEVOPS_HELM_generic_python_frontend_temporary_pods_creation/github-pages
-    alias: trading-strategy-analysis-temp-pod
+    alias: tsa-pod

@@ -1,5 +1,5 @@
 # values.dev.yaml
-module: tsa-pod  # Plus court que trading-strategy-analysis-temp-pod
+module: tsa-pod  
 
 podManager:  # Configuration manquante
   enabled: true  # ou false selon le besoin
@@ -16,7 +16,7 @@ replicas: 1
 
 containers:
   image: ghcr.io/miletocarmelo/tradingstrategyanalysis
-  name: tsa-pod-app  # Plus court que trading-strategy-analysis-temp-pod
+  name: tsa-pod-app
   tags: latest
   ports:
     containerPort: 80 # Changed from 'http' to '80' for consistency
