@@ -1,14 +1,9 @@
 
 tsa:  # Ajoutez ce niveau pour correspondre au nom du subchart
-    
   module: tsa
-
   name: tsa
-
   environment: prod
-
   replicas: 1
-
   containers:
     image: ghcr.io/miletocarmelo/tradingstrategyanalysis
     name: tranding-strategy-analysis
@@ -26,11 +21,9 @@ tsa:  # Ajoutez ce niveau pour correspondre au nom du subchart
       enabled: false
     redis:
       enabled: false
-
   service:
     port: 8045
     targetPort: 80
-
   ingress:
     host: quant-cm.com  # Moved this out of 'hosts' array for simplicity
     enabled: true  # Changed from 'enable' to 'enabled' for consistency
@@ -41,6 +34,5 @@ tsa:  # Ajoutez ce niveau pour correspondre au nom du subchart
     spec:
       path: /tsa
       pathType: Prefix
-
   configmap:
     enabled: false
