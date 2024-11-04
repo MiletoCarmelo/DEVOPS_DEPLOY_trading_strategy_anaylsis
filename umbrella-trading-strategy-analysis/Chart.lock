@@ -1,0 +1,6 @@
+dependencies:
+- name: generic-python-frontend
+  repository: https://raw.githubusercontent.com/MiletoCarmelo/DEVOPS_HELM_generic_python_frontend/github-pages
+  version: 0.1.0
+digest: sha256:e8012ee49b49ec60c07db9e562adbed25387a70e19241d5199a625a0b5286b30
+generated: "2024-11-04T15:24:14.282303+01:00"

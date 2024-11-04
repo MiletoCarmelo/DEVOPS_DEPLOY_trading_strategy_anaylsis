@@ -1,4 +1,4 @@
-# tsa:  # Ajoutez ce niveau pour correspondre au nom du subchart
+tsa:  # Ajoutez ce niveau pour correspondre au nom du subchart
   module: tsa
   name: tsa
   environment: dev
