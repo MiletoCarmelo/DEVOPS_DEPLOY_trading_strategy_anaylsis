@@ -1,7 +1,6 @@
 
 tsa:  # Ajoutez ce niveau pour correspondre au nom du subchart
   module: tsa
-  name: tsa
   environment: prod
   replicas: 1
   containers:
