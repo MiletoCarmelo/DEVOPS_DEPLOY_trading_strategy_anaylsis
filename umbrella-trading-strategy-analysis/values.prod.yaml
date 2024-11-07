@@ -24,7 +24,7 @@ tsa:  # Ajoutez ce niveau pour correspondre au nom du subchart
     port: 8045
     targetPort: 80
   ingress:
-    host: quant-cm.com  # Moved this out of 'hosts' array for simplicity
+    host: intranet-mm.com  # Moved this out of 'hosts' array for simplicity
     enabled: true  # Changed from 'enable' to 'enabled' for consistency
     metadata:
       annotations:
