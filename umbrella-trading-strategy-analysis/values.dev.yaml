@@ -23,15 +23,5 @@ tsa:  # Ajoutez ce niveau pour correspondre au nom du subchart
   service:
     port: 80
     targetPort: 80
-  ingress:
-    host: mm.ch  
-    enabled: true 
-    metadata:
-      annotations:
-        kubernetes.io/ingress.class: nginx  # Added this common annotation
-        nginx.ingress.kubernetes.io/rewrite-target: /$1  # If you want path rewriting
-    spec:
-      path: /trading-strategy-analysis/
-      pathType: Prefix
   configmap:
     enabled: false
