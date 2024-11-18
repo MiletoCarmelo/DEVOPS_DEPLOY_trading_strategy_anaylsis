@@ -21,6 +21,7 @@ tsa:  # Ajoutez ce niveau pour correspondre au nom du subchart
     redis:
       enabled: false
   service:
+    type: NodePort # ClusterID
     port: 80
     targetPort: 80
   configmap:
